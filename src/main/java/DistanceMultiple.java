@@ -31,9 +31,33 @@ import java.util.Scanner;
 
 
 public class DistanceMultiple {
-    public static void main(String[] args) {
+    public static void main(String[] args)
+    {
+        Scanner sc = new Scanner(System.in);
+        // tells scanner to delimit by parantheses, commas, and whitespace
+        sc.useDelimiter("[(),\\s]+");
 
+        System.out.println("\nSyeda Khadija\nAPCS-A\nLewis 2.8 Distance Formula Program\n\n");
 
+        // prompts the user for a number of times the program will run
+        System.out.print("Enter the number of runs: ");
+        int numRuns = sc.nextInt();
+
+        // runs the program for a number of times given by the user
+        for (int j = 0; j < numRuns; j++) {
+            // prompts the user for two coordinates and stores their values into variables
+            System.out.print("\n\nEnter two xy coordinates: ");
+            double x1 = sc.nextInt();
+            double y1 = sc.nextInt();
+            double x2 = sc.nextInt();
+            double y2 = sc.nextInt();
+
+            // calculates the distance between both coordinates using the distance formula
+            double distance = Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
+
+            // prints the distance
+            System.out.println("\nThe distance between your points is " + distance);
+        }
     }
 
 }
